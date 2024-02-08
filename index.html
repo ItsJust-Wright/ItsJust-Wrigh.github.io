@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Beaver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 style="text-align: center;">All You Need to Know About Beavers!</h1>
+    
+    <p style="text-align: center;">
+        The beaver, a remarkable mammal, stands out for its ability to mold the environment, a trait that is rare in the animal kingdom and parallels human ingenuity.<br>
+        Fascinated by their complex abilities, I chose beavers for our project to delve into the evolution of their unique skill set.<br>
+        Beavers sculpt their surroundings by constructing dams and lodges, using a combination of natural materials and remarkable engineering tactics. <br>
+        This process creates wetlands, which serve as biodiversity hotspots and contributes to ecological health.<br>
+        As natural engineers, beavers use their sharp teeth and powerful tails to fell trees and build, reflecting an evolutionary response to survival needs. <br>
+        Their structures are feats of precision and durability, evidencing advanced problem-solving and social cooperation.<br>
+        These dams provide safety for their colonies and maintain wetland ecosystems, showcasing the beavers' pivotal role in their habitats. By studying beavers, <br>
+        we gain insight into environmental engineering that predates human intervention, opening a window into the symbiotic relationship between species and their habitats.<br>
+        Through understanding beavers, we can appreciate the intricate balance of nature and the evolutionary paths that lead to such profound environmental influences.
+    </p>
+    <img src="images/beaver2.png" alt="Beaver2" id="beaverImage2" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div id="beaverContainer">
+        <img src="images/beaver.png" alt="Beaver" id="beaverImage">
+        <div id="beaverFacts" style="display: block;">
+            <p id="beaverFact">Click on me for beaver facts!</p>
+        </div>
+    </div>
+
+    <script>
+        var facts = [
+            "Beavers are second only to humans in their ability to manipulate and change their environment.",
+            "Beavers have a set of transparent eyelids that function much like goggles, allowing them to see underwater.",
+            "Their teeth never stop growing. Chewing on tree trunks and branches helps keep their teeth from getting too long.",
+            "Beavers slap their tails against the water to warn others of danger, effectively communicating with their colony.",
+            "They are known for maintaining the health of wetlands, which benefits the biodiversity of the ecosystem.",
+            "A beaver's lodge has underwater entrances, making it difficult for predators to breach.",
+            "Beavers are monogamous and are known to live with their mate for life.",
+            "The largest beaver dam ever recorded was found in Wood Buffalo National Park, Alberta, Canada, and it measured 850 meters long.",
+            "They use a combination of sticks, mud, and rocks to construct their dams, and the sound of running water can trigger a beaver to start building."
+        ];
+        var currentFact = 0;
+
+        function showFact() {
+            var factElement = document.getElementById('beaverFact');
+            var beaverFactsContainer = document.getElementById('beaverFacts');
+            factElement.innerText = facts[currentFact];
+            beaverFactsContainer.style.display = 'block'; // Make sure the facts container is visible
+            currentFact = (currentFact + 1) % facts.length; // Cycle through the facts
+        }
+
+        document.getElementById('beaverImage').addEventListener('click', showFact);
+        document.getElementById('clickMe').addEventListener('click', showFact);
+    </script>
+    
+</body>
+</html>
